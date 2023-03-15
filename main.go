@@ -27,13 +27,17 @@ func main() {
 	var last *av.Packet
 
 	cur := make([]*av.Packet, 0)
-	//start := time.Now()
 	count := 0
 	i := 0
+
 	for pkt := range client.OutgoingPacketQueue {
 		pkt.Data = pkt.Data[4:]
 		i++
 
+		//
+		// If the packet is a key-frame, then we need to save the previous batch of packets to disk
+		// and start a new batch.
+		//
 		if pkt.IsKeyFrame {
 			count++
 			// For every key-frame pre-pend the SPS and PPS
@@ -58,6 +62,9 @@ func main() {
 			cur = append(cur, last)
 			count = 0
 		} else {
+			//
+			// Accumulating packets for the next batch to save to a new .ts (mp4) file..
+			//
 			cur = append(cur, pkt)
 		}
 	}
