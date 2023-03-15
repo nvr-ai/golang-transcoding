@@ -58,6 +58,10 @@ func main() {
 
 			go process(cur, client.CodecData)
 
+			//
+			// ** This is where I want to change the mp4 video and make it smaller, etc.. **
+			//
+
 			cur = nil
 			cur = append(cur, last)
 			count = 0
