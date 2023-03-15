@@ -1,0 +1,4 @@
+github.com/deepch/vdk v0.0.20 h1:GNQjfgapEEzaownzfRWYdQw+SqchW2yC1ha+/d0Bl24=
+github.com/deepch/vdk v0.0.20/go.mod h1:774MjElr4PMgmXuTi9HXrK0nM0phMXE80W/g+vyTpAc=
+github.com/google/uuid v1.3.0 h1:t6JiXgmwXMjEs8VusXIJk2BXHsn+wx8BZdTaoZ5fu7I=
+github.com/google/uuid v1.3.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
